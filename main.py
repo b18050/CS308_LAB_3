@@ -12,6 +12,8 @@ import subprocess as sp
 
 global filename
 filename=""
+global fname2
+fname2=""
 
 # Read given input file
 def read_file(file):
@@ -55,9 +57,9 @@ def preprocess_text(text):
 
 
 # Opens the notepad for editing
-def edit_1():
+def edit_file():
     programName = "notepad.exe"
-    sp.Popen([programName, fname])
+    sp.Popen([programName, filename])
 
 # Function to find occurence of a particular words in the file
 def find_1():
@@ -164,8 +166,8 @@ def driver_widget():
    #         command=hist_p) 
    # hist_plot_btn.grid(column=0,row=1)
 
-   # edit_btn = Button(root, text = "Edit" ,command=edit_file) 
-   # edit_btn.grid(column=2,row=1)
+    edit_btn = Button(root, text = "Edit" ,command=edit_file) 
+    edit_btn.grid(column=2,row=1)
 
     # Show results of the search
     global text_area
@@ -240,7 +242,7 @@ def find_word():
 root = Tk() 
 # root window title and dimension 
 root.title("Text_Analyser_LAB_3") 
-root.geometry('800x600') 
+root.geometry('800x800') 
   
 # adding a label to the root window 
 label = Label(root, text = "Choose a file to run") 
